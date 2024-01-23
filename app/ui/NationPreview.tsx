@@ -8,7 +8,7 @@ export default function NationPreview({name, capital, region, flag, flagAlt, pop
     // data-region is for the region filter
     return (
         <>
-        <Link href={`/${name}`} data-region={`${region}`} className={styles.card}>
+        <Link href={`/${name.replaceAll(" ", "%20")}`} data-region={`${region}`} className={styles.card}>
                 <Image 
                     src={flag}
                     alt={flagAlt}
