@@ -1,0 +1,45 @@
+$DarkModeElements: hsl(209, 23%, 22%)
+$DarkModeBackground: hsl(207, 26%, 17%)
+$LightModeText: hsl(200, 15%, 8%)
+$LightModeInput: hsl(0, 0%, 52%)
+$LightModeBackground: hsl(0, 0%, 98%)
+$DarkModeTextndLightModeElements: hsl(0, 0%, 100%)
+
+
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+
+
+:root, :root:not(.darkMode) //light mode
+    --textColor: #{$LightModeText}
+    --InputColour: #{$LightModeInput}
+    --BackgroundColour: #{$LightModeBackground}
+    --ElementColour: #{$DarkModeTextndLightModeElements}
+    --PagePadding: #{5.5vw}
+
+@mixin darkModeVars()
+    --textColor: #{$DarkModeTextndLightModeElements}
+    --InputColour: #{$DarkModeElements}
+    --BackgroundColour: #{$DarkModeBackground}
+    --ElementColour: #{$DarkModeElements}
+    
+
+@media (prefers-color-scheme: dark)
+    :root
+        @include darkModeVars()
+        
+
+:root.darkMode 
+    @include darkModeVars()
+    
+
+body
+    background: var(--BackgroundColour)
+    color: var(--textColor)
+
+@media screen and ( max-width: 1020px  )
+    :root
+        --PagePadding: #{55px} !important
