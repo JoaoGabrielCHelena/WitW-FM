@@ -36,7 +36,7 @@ function borders(input:string[], threeLetterCodes:Map<string, string>) {
   if (input.length == 0) {
     return "None"
   }
-  return input.map((input:string) => <Link href={`/${threeLetterCodes.get(input)!.replaceAll(" ", "%20")}`}>{threeLetterCodes.get(`${input}`)}</Link>)
+  return input.map((input:string) => <Link href={`/${threeLetterCodes.get(input)?.replaceAll(" ", "%20")}`}>{threeLetterCodes.get(`${input}`)}</Link>)
 }
 
 export default async function Page(country:{params:{detail:string}}) {
