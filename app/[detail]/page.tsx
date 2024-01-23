@@ -36,7 +36,7 @@ function borders(input:string[], threeLetterCodes:Map<string, string>) {
   if (input.length == 0) {
     return "None"
   }
-  return input.map((input:string) => <Link href={`/${threeLetterCodes.get(input)}`}>{threeLetterCodes.get(`${input}`)}</Link>)
+  return input.map((input:string) => <Link href={`/${threeLetterCodes.get(input)!.replaceAll(" ", "%20")}`}>{threeLetterCodes.get(`${input}`)}</Link>)
 }
 
 export default async function Page(country:{params:{detail:string}}) {
@@ -72,7 +72,6 @@ export default async function Page(country:{params:{detail:string}}) {
     //  creates a map that associates each three letter code to a name, is used by borders()
     var threeLetterCodes = new Map()  
     countriesfull.forEach(element => {
-      element.name.common = element.name.common.replaceAll(" ", "%20")
       threeLetterCodes.set(`${element.cca3}`, `${element.name.common}`)
     }); 
 
