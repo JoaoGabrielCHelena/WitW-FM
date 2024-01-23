@@ -72,6 +72,7 @@ export default async function Page(country:{params:{detail:string}}) {
     //  creates a map that associates each three letter code to a name, is used by borders()
     var threeLetterCodes = new Map()  
     countriesfull.forEach(element => {
+      element.name.common = element.name.common.replaceAll(" ", "%20")
       threeLetterCodes.set(`${element.cca3}`, `${element.name.common}`)
     }); 
 
