@@ -1,0 +1,119 @@
+$box-shadow: 0 0 9px 0px hsla(0, 0, 0, 0.15)
+    
+.main
+    padding-bottom: 2rem
+    img
+        width: 100%
+        height: auto
+        box-shadow: $box-shadow
+
+.tooltipText
+    position: relative
+    cursor: default
+    text-decoration: underline dotted 1px var(--textColor)
+    &:has(.tooltipBox:empty)
+        cursor: initial
+        text-decoration: none
+    &:hover .tooltipBox
+        visibility: visible
+        transition: opacity 0.3s
+        opacity: 1
+    .tooltipBox
+        visibility: hidden
+        background-color: var(--ElementColour)
+        color: var(--textColor)
+        text-align: center
+        width: max-content
+        padding: 1ch 2ch
+        border-radius: .5rem
+        position: absolute
+        z-index: 1
+        bottom: 125%
+        left: 50%
+        transform: translateX(-50%)
+        opacity: 0
+        transition: opacity 0.3s
+        box-shadow: $box-shadow
+        &:empty
+            display: none
+
+.grid
+    //  V is altered to make the gap bigger (>2) or smaller (<2)
+    --gap-modifier: 2
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: calc( var(--PagePadding) * var(--gap-modifier) ) 
+    align-items: center
+    padding: 0 var(--PagePadding)
+    @media screen and ( max-width: 1020px )
+        --gap-modifier: 1
+        grid-template-columns: 1fr
+        grid-template-rows: max-content max-content
+        
+
+.info
+    font-weight: 600
+
+.value 
+    font-weight: 300
+
+.flexRow
+    display: flex
+    flex-direction: row
+    margin: 2rem 0 3rem
+    gap: 1ch
+    @media screen and ( min-width: 620px ) and ( max-width: 1020px )
+        gap: 3ch
+    @media screen and ( max-width: 619px )
+        flex-direction: column
+
+.nationame
+    font-weight: 800
+    font-size: 32px
+
+.back
+    
+    --padding-modifier: 1
+    display: inline-block
+    margin: 3rem calc( var(--padding-modifier) * var(--PagePadding) )
+    color: var(--textColor)
+    background: var(--ElementColour)
+    text-decoration: none
+    padding: 1ch 6ch
+    border-radius: .5rem
+    box-shadow: $box-shadow
+    transform-origin: center
+    scale: 100%
+    transition: scale 200ms
+    &:hover, &:focus-visible
+        scale: 105%
+    @media screen and ( max-width: 1020px )
+        --padding-modifier: 0.6
+    
+    svg
+        margin-right: 1ch
+        fill: var(--textColor)
+
+
+.justifySB
+    justify-content: space-between
+
+.borders
+    display: flex
+    flex-wrap: wrap
+    gap: 1ch
+    align-items: center
+    a
+        color: var(--textColor)
+        background: var(--ElementColour)
+        text-decoration: none
+        padding: .5ch 1.5ch
+        border-radius: .5rem
+        box-shadow: $box-shadow
+        transform-origin: center
+        scale: 100%
+        transition: scale 200ms
+        &:hover, &:focus-visible
+            scale: 105%
+        &:empty
+            display: none
