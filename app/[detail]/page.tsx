@@ -1,8 +1,8 @@
-import Image from '@/node_modules/next/image';
-import Link from '@/node_modules/next/link';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import Tooltip from '../ui/tooltip';
-import styles from "./detail.module.css"
+import styles from "../sass/detail.module.sass"
 
 type Props = {
     params: { detail: string };
@@ -36,7 +36,7 @@ function borders(input:string[], threeLetterCodes:Map<string, string>) {
   if (input.length == 0) {
     return "None"
   }
-  return input.map((input:string) => <Link href={`/${threeLetterCodes.get(input)?.replaceAll(" ", "%20")}`}>{threeLetterCodes.get(`${input}`)}</Link>)
+  return input.map((code:string) => <Link key={code} href={`/${threeLetterCodes.get(code)?.replaceAll(" ", "%20")}`}>{threeLetterCodes.get(`${code}`)}</Link>)
 }
 
 export default async function Page(country:{params:{detail:string}}) {

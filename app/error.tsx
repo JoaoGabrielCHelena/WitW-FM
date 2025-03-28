@@ -1,9 +1,8 @@
 "use client"
 
-import styles from "./home.module.css"
+import styles from "./sass/home.module.sass"
   
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string }

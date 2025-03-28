@@ -1,10 +1,11 @@
-import styles from "../[detail]/detail.module.css"
+import React from "react"
+import styles from "../sass/detail.module.sass"
 
 function innerTooltip(input:string[]) {
     if (input.length == 1) {
         return
     }
-    return input.map((input:string) => <>{input}<br /></> )
+    return input.map((input:string) => <React.Fragment key={input}>{input}<br /></React.Fragment> )
   }
 export default function Tooltip({text, tooltipItems}:{text:string, tooltipItems:string[]}) {
     return (

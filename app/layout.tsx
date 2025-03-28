@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./sass/globals.sass";
 import Header from "./ui/header";
 import { Nunito_Sans } from 'next/font/google'
 import { Suspense } from "react";

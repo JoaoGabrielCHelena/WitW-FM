@@ -1,8 +1,7 @@
 'use client'
 
 import { useRouter } from "@/node_modules/next/navigation";
-import { useEffect } from "react";
-import styles from "../home.module.css";
+import styles from "../sass/home.module.sass";
 
 export function Search() {
     const router = useRouter()

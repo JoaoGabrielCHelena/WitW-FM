@@ -1,6 +1,6 @@
 'use client'
 import { useEffect } from "react";
-import styles from "../home.module.css"
+import styles from "../sass/home.module.sass"
 
 function FirstCheck():any {
     if(localStorage.getItem("witwtheme")) {

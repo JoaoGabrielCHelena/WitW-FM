@@ -1,5 +1,4 @@
-import Image from "next/image";
-import styles from "./home.module.css";
+import styles from "./sass/home.module.sass";
 import NationPreview from "./ui/NationPreview";
 import {Search, RegionSelect} from "./ui/filterRow";
 
@@ -14,7 +13,7 @@ type Nation = {
 
 
 function cards(countries:Nation[]) {
-  return countries.map((country:Nation) => NationPreview(country))
+  return countries.map((country:Nation) => <NationPreview key={country.name} {...country}/>)
 }
 
 

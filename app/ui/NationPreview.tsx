@@ -1,7 +1,7 @@
 
 import Image from "@/node_modules/next/image"
 import Link from "@/node_modules/next/link";
-import styles from "../home.module.css";
+import styles from "../sass/home.module.sass";
 
 
 export default function NationPreview({name, capital, region, flag, flagAlt, population}: {name: string, capital:string, region:string, flag:string, flagAlt:string, population:string}){

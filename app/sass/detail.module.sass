@@ -16,7 +16,7 @@ $box-shadow: 0 0 9px 0px hsla(0, 0, 0, 0.15)
         text-decoration: none
     &:hover .tooltipBox
         visibility: visible
-        transition: opacity 0.3s
+        transition: opacity 0.3s, background var(--mode-timing) ease-in-out, color var(--mode-timing) ease-in-out
         opacity: 1
     .tooltipBox
         visibility: hidden
@@ -32,7 +32,7 @@ $box-shadow: 0 0 9px 0px hsla(0, 0, 0, 0.15)
         left: 50%
         transform: translateX(-50%)
         opacity: 0
-        transition: opacity 0.3s
+        transition: opacity 0.3s, background var(--mode-timing) ease-in-out, color var(--mode-timing) ease-in-out
         box-shadow: $box-shadow
         &:empty
             display: none
@@ -84,7 +84,7 @@ $box-shadow: 0 0 9px 0px hsla(0, 0, 0, 0.15)
     box-shadow: $box-shadow
     transform-origin: center
     scale: 100%
-    transition: scale 200ms
+    transition: scale 200ms, background var(--mode-timing) ease-in-out, color var(--mode-timing) ease-in-out
     &:hover, &:focus-visible
         scale: 105%
     @media screen and ( max-width: 1020px )
@@ -112,7 +112,7 @@ $box-shadow: 0 0 9px 0px hsla(0, 0, 0, 0.15)
         box-shadow: $box-shadow
         transform-origin: center
         scale: 100%
-        transition: scale 200ms
+        transition: scale 200ms, background var(--mode-timing) ease-in-out, color var(--mode-timing) ease-in-out
         &:hover, &:focus-visible
             scale: 105%
         &:empty
