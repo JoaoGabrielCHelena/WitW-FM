@@ -11,12 +11,6 @@ type Nation = {
     population: string
 }
 
-function cards(countries: Nation[]) {
-    return countries.map((country: Nation) => (
-        <NationPreview key={country.name} {...country} />
-    ))
-}
-
 export default async function Home() {
     const info = await fetch(
         `https://restcountries.com/v3.1/independent?status=true&fields=name,cca3,flags,population,region,capital`,
@@ -50,6 +44,10 @@ export default async function Home() {
         return 0
     })
 
+    let cards = cardInfo.map((country: Nation) => (
+        <NationPreview key={country.name} {...country} />
+    ))
+
     return (
         <main className={styles.main}>
             <div className={styles.filterRow}>
@@ -57,7 +55,7 @@ export default async function Home() {
                 <RegionSelect />
             </div>
             <div className={styles.grid}>
-                {cards(cardInfo) /*generates each nation's card*/}
+                {cards}
             </div>
         </main>
     )
